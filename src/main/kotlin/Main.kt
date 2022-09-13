@@ -8,7 +8,7 @@ fun main () {
 //       1 -> initTeacherSystem()
 //        2 ->
 //    }
-//    else println("não foi")
+//    else println("não foi").
 
     studentsListGradeOne[0].registration(turmaPretendida = 3)
     val nomelogin = scanner.next()
@@ -18,11 +18,11 @@ fun main () {
         println("login existe")
     } else "login não existe"
 
-    fun initTeacherSystem() {
-        println("acessando o sistema no modo professor")
-    }
+//    fun initTeacherSystem() {
+//        println("acessando o sistema no modo professor")
+//    }
+//
 }
-
 
 
 
