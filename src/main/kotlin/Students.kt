@@ -1,3 +1,4 @@
+import java.util.*
 
 open class Students(
     val name: String,
@@ -62,20 +63,14 @@ open class Students(
 
     fun StudentInfo() {
 
-        var gradesInfo = grades
-
-        for (i in gradesInfo) {
-            println("Nota: ${i}")
-            }
 
         println("Informações do Aluno:")
         println("Nome: $name")
         println("Número de registro: $registrationNumber")
         println("Turma passada: $beforeGrade")
         println("Turma atual: $grade")
-        println("Notas do aluno:")
+        println("Notas do aluno: ${Arrays.toString(grades)}")
         println("Número de faltas: $absenceNumber")
-        println("Nota média:  ")
         avarageGradeTest()
         passTest()
     }
@@ -94,12 +89,13 @@ open class Students(
         val averageGrades = soma / gradesAvgTest.size
 
         if (absenceNumber < 31 && averageGrades > 6.0) {
+            println("Aluno $name aprovado.")
             return "Aprovado"
-            println("Aluno $name aprovado")
+
 
         } else {
-            return "Reprovado"
             println("Aluno $name reprovado")
+            return "Reprovado"
         }
 
     }

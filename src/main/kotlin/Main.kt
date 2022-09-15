@@ -2,8 +2,8 @@ import java.util.Scanner
 fun main () {
     println("Bem vindo ao sistema escolar")
 
-    studentsListGradeOne[5].registration(2)
-    studentsListGradeOne[3].StudentInfo()
+//    studentsListGradeOne[3].StudentInfo()
+    studentsListGradeTwo[2].studentsLogins("Natalia", 2203)
 //    println("se você for professor digite 1\nse você for aluno digite 2")
 //
 //    val scanner = Scanner(System.`in`)
