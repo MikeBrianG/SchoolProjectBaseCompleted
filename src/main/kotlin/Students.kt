@@ -1,47 +1,40 @@
+
 open class Students(
     val name: String,
-    val registration: Int,
-    var grade: Int = registration,
+    val registrationNumber: Int,
+    var grade: Int,
     val beforeGrade: Int,
     val grades: DoubleArray = doubleArrayOf(),
     val absenceNumber: Int,
     val password: Int,
-)
-{
-    var gradeTest: Int = 0
+) {
+    open var gradeTest: Int = 0
 
     open fun registration(turmaPretendida: Int): Int {
         if (beforeGrade > turmaPretendida && passTest() == "Aprovado") {
             println("Matricula não autorizada para ${name}")
             gradeTest = beforeGrade
             return gradeTest
-        }
-        else if (beforeGrade == turmaPretendida && passTest() == "Aprovado"){
+        } else if (beforeGrade == turmaPretendida && passTest() == "Aprovado") {
             println("Matricula não autorizada para ${name}")
             gradeTest = beforeGrade
             return gradeTest
-        }
-        else if( beforeGrade < turmaPretendida && passTest() == "Aprovado" && turmaPretendida == beforeGrade){
+        } else if (beforeGrade < turmaPretendida && passTest() == "Aprovado") {
             println("Matricula de ${name}  autorizada para a turma ${turmaPretendida}")
             gradeTest = beforeGrade
             return gradeTest
-        }
-        else if(turmaPretendida > beforeGrade+1 ){
+        } else if (turmaPretendida > beforeGrade + 1) {
             println("Registro negado")
             gradeTest = beforeGrade
             return gradeTest
 
-        }
-        else{
+        } else {
             println("Matricula de ${name} autorizada para a turma ${turmaPretendida}")
             gradeTest = beforeGrade
             return gradeTest
         }
 
     }
-
-
-
 
 
     fun avarageGradeTest() {
@@ -55,6 +48,36 @@ open class Students(
         val averageGrades = sumAvgTest / gradesAvgTest.size
         println("Nota média: ${"%.1f".format(averageGrades)}")
 
+    }
+
+    val loginStudentsG1: String = name
+    val passwordStudents1: Int = password
+    fun studentsLogins(login: String, password: Int) {
+        if (loginStudentsG1 == login && passwordStudents1 == password) {
+            println("login efetuado com sucesso!")
+        } else {
+            println("login ou senha incorretas!")
+        }
+    }
+
+    fun StudentInfo() {
+
+        var gradesInfo = grades
+
+        for (i in gradesInfo) {
+            println("Nota: ${i}")
+            }
+
+        println("Informações do Aluno:")
+        println("Nome: $name")
+        println("Número de registro: $registrationNumber")
+        println("Turma passada: $beforeGrade")
+        println("Turma atual: $grade")
+        println("Notas do aluno:")
+        println("Número de faltas: $absenceNumber")
+        println("Nota média:  ")
+        avarageGradeTest()
+        passTest()
     }
 
 
@@ -72,35 +95,12 @@ open class Students(
 
         if (absenceNumber < 31 && averageGrades > 6.0) {
             return "Aprovado"
+            println("Aluno $name aprovado")
 
         } else {
-            return  "Reprovado"
+            return "Reprovado"
+            println("Aluno $name reprovado")
         }
 
-
-        val loginStudentsG1: String = "$name"
-        val passwordStudents1: Int = password
-
-        fun studentsLogin(login: String, password: Int) {
-            if (loginStudentsG1 == login && passwordStudents1 == password) {
-                println("login efetuado com sucesso!")
-            } else {
-                println("login ou senha incorretas!")
-            }
-
-        }
-
-        fun StudentInfo() {
-            println("Informações do Aluno:")
-            println("Nome: $name")
-            println("Número de registro: $registration")
-            println("Turma passada: $beforeGrade")
-            println("Turma atual: $grade")
-            println("Notas do aluno: $grades")
-            println("Número de faltas: $absenceNumber")
-            println("Nota média:  ")
-            avarageGradeTest()
-            passTest()
-        }
     }
 }
