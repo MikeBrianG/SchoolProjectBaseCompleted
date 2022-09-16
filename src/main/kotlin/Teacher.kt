@@ -3,16 +3,16 @@ class Teacher(
     cpf: String,
     wage: Double,
     password: Int,
-): Employees(
+) : Employees(
     name = name,
     cpf = cpf,
     wage = wage,
 ) {
-    val teacherLogin: String = "$name"
-    val passwordTeachers: Int = password
+    private val teacherUserLogin: String = name
+    private val teacherUserPassword: Int = password
 
-    fun teacherLoginFun(login: String, password: Int) {
-        if (teacherLogin == login && passwordTeachers == password) {
+    fun teacherLogin(myLogin: String, myPassword: Int) {
+        if (myLogin == teacherUserLogin && myPassword == teacherUserPassword) {
             println("login efetuado com sucesso!")
         } else {
             println("login ou senha incorretas!")

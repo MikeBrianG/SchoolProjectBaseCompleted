@@ -2,12 +2,12 @@ class Director(
     name: String,
     cpf: String,
     wage: Double
-): Employees(
+) : Employees(
     name = name,
     cpf = cpf,
     wage = wage
 ) {
-   override fun bonus(): Double {
+    override fun bonus(): Double {
         return wage * 0.2
     }
 }

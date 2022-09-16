@@ -4,6 +4,7 @@ var teacherGradeOne = Teacher(
     wage = 2500.0,
     password = 1111
 )
+
 var teacherGradeTwo = Teacher(
     name = "Claudia",
     cpf = "222.222.222-22",
