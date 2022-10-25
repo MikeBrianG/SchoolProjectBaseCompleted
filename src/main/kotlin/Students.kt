@@ -1,4 +1,4 @@
-import java.util.*
+
 
 open class Students(
     val name: String,
@@ -46,7 +46,7 @@ open class Students(
         println("Número de registro: $registrationNumber")
         println("Turma passada: $beforeGrade")
         println("Turma atual: $grade")
-        println("Notas do aluno: ${Arrays.toString(gradesList)}")
+        println("Notas do aluno: ${gradesList.contentToString()}")
         println("Número de faltas: $absenceNumber")
         averageGradeTest()
         passTest()
@@ -70,10 +70,10 @@ open class Students(
         }
     }
     private fun unauthorizedEnrollmentPrintln() {
-        println("Matricula não autorizada para ${name}")
+        println("Matricula não autorizada para $name")
     }
     private fun authorizedEnrollmentPrintln() {
-        println("Matricula autorizada para ${name}")
+        println("Matricula autorizada para $name")
     }
     enum class StudentState {
         APROVADO,
