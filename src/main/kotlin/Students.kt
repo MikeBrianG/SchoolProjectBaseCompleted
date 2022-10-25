@@ -9,32 +9,18 @@ open class Students(
     val absenceNumber: Int,
     val password: Int,
 ) {
-
-    open var gradeTest: Int = 0
-    open fun registration(intendedClass: Int): Int {
-        if (beforeGrade > intendedClass && passTest() == StudentState.APROVADO) {
+    open fun registration(intendedClass: Int) {
+        if (intendedClass == beforeGrade  && passTest() == StudentState.REPROVADO) {
+            authorizedEnrollmentPrintln()
+        }
+        else if (intendedClass == beforeGrade+1  && passTest() == StudentState.APROVADO)  {
+            authorizedEnrollmentPrintln()
+        }
+        else {
             unauthorizedEnrollmentPrintln()
-            gradeTest = beforeGrade
-            return gradeTest
-        } else if (beforeGrade == intendedClass && passTest() == StudentState.APROVADO) {
-            unauthorizedEnrollmentPrintln()
-            gradeTest = beforeGrade
-            return gradeTest
-        } else if (beforeGrade < intendedClass && passTest() == StudentState.APROVADO) {
-            println("Matricula de ${name} autorizada para a turma ${intendedClass}")
-            gradeTest = beforeGrade
-            return gradeTest
-        } else if (intendedClass > beforeGrade + 1) {
-            unauthorizedEnrollmentPrintln()
-            gradeTest = beforeGrade
-            return gradeTest
-        } else {
-            println("Matricula de ${name} autorizada para a turma ${intendedClass}")
-            gradeTest = beforeGrade
-            return gradeTest
         }
     }
-    private fun averageGradeTest() {
+     fun averageGradeTest() {
         val gradesAvgTest = gradesList
         var sumAvgTest = 0.0
 
@@ -65,7 +51,7 @@ open class Students(
         averageGradeTest()
         passTest()
     }
-    private fun passTest(): StudentState {
+    fun passTest(): StudentState {
         val gradesAvgTest = gradesList
         var sum = 0.0
 
@@ -86,8 +72,11 @@ open class Students(
     private fun unauthorizedEnrollmentPrintln() {
         println("Matricula não autorizada para ${name}")
     }
-}
-enum class StudentState{
-    APROVADO,
-    REPROVADO
+    private fun authorizedEnrollmentPrintln() {
+        println("Matricula autorizada para ${name}")
+    }
+    enum class StudentState {
+        APROVADO,
+        REPROVADO
+    }
 }

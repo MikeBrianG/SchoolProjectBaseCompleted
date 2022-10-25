@@ -3,18 +3,20 @@ var studentsListGradeOne: List<Students> = listOf(
         name = "Brenis",
         registrationNumber = 151515,
         grade = 1,
-        beforeGrade = 2,
+        beforeGrade = 0,
         gradesList = doubleArrayOf(7.0, 5.5, 9.5),
         absenceNumber = 25,
         password = 1101,
+
     ), Students(
         name = "Mike",
         registrationNumber = 101210,
         grade = 1,
         beforeGrade = 0,
-        gradesList = doubleArrayOf(6.0, 8.0, 7.5),
+        gradesList = doubleArrayOf(6.0, 8.0, 5.0),
         absenceNumber = 15,
         password = 1102
+
     ), Students(
         name = "Denilson",
         registrationNumber = 101010,
@@ -23,6 +25,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(6.0, 6.0, 7.5),
         absenceNumber = 39,
         password = 1103
+
     ), Students(
         name = "Douglas",
         registrationNumber = 111111,
@@ -31,6 +34,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(9.5, 8.0, 7.5),
         absenceNumber = 18,
         password = 1104
+
     ), Students(
         name = "Eduardo",
         registrationNumber = 121212,
@@ -39,6 +43,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(3.0, 8.0, 7.5),
         absenceNumber = 41,
         password = 1105
+
     ), Students(
         name = "Matheus",
         registrationNumber = 131313,
@@ -47,6 +52,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(6.0, 5.0, 7.5),
         absenceNumber = 29,
         password = 1106
+
     ), Students(
         name = "Sergio",
         registrationNumber = 141414,
@@ -55,6 +61,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(6.0, 10.0, 7.5),
         absenceNumber = 9,
         password = 1107
+
     ), Students(
         name = "Joao",
         registrationNumber = 151515,
@@ -63,6 +70,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(6.0, 8.0, 7.5),
         absenceNumber = 1,
         password = 1108
+
     ), Students(
         name = "Bruna",
         registrationNumber = 161616,
@@ -71,6 +79,7 @@ var studentsListGradeOne: List<Students> = listOf(
         gradesList = doubleArrayOf(6.0, 8.0, 6.0),
         absenceNumber = 15,
         password = 1109
+
     ), Students(
         name = "Silas",
         registrationNumber = 171717,
