@@ -1,4 +1,4 @@
-import java.util.Scanner
+
 
 fun main() {
     println("Bem vindo ao sistema escolar")
